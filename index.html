@@ -42,10 +42,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/css/splide.min.css"
     />
+    <style>
+      .splide__pagination .splide__pagination__page {
+        background-color: #ffffff6e;
+      }
+      .splide__pagination .splide__pagination__page.is-active {
+        background-color: white;
+      }
+    </style>
     <!-- splide js : end -->
   </head>
   <body class="font-['Inter'] text-gray-700">
-    <div class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b px-5 z-10">
+    <div
+      class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b px-5 z-10"
+    >
       <nav
         class="
           flex
@@ -207,9 +217,33 @@
     </aside>
     <main class="mt-[63px] max-w-[1440px] w-full mx-auto p-5">
       <div class="relative group overflow-hidden mb-5" id="splide">
-        <div class="splide__arrows">
-          <button class="splide__arrow splide__arrow--prev material-icons transform -translate-x-[200%] group-hover:translate-x-0 -mt-6 transition-all ">chevron_left</button>
-          <button class="splide__arrow splide__arrow--next material-icons transform translate-x-[200%] group-hover:translate-x-0 -mt-6 transition-all">chevron_right</button>
+        <div class="splide__arrows hidden lg:block">
+          <button
+            class="
+              splide__arrow splide__arrow--prev
+              material-icons
+              transform
+              -translate-x-[200%]
+              group-hover:translate-x-0
+              -mt-6
+              transition-all
+            "
+          >
+            chevron_left
+          </button>
+          <button
+            class="
+              splide__arrow splide__arrow--next
+              material-icons
+              transform
+              translate-x-[200%]
+              group-hover:translate-x-0
+              -mt-6
+              transition-all
+            "
+          >
+            chevron_right
+          </button>
         </div>
         <div class="splide__track">
           <ul class="splide__list">
