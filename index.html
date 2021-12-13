@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant FE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-['Inter'] text-gray-700">
+    <div class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b px-5">
+      <nav
+        class="
+          flex
+          justify-between
+          max-w-[1440px]
+          mx-auto
+          items-center
+          my-3
+          relative
+        "
+      >
+        <div class="flex items-center gap-x-2" id="left">
+          <button class="material-icons-round lg:hidden" id="menu">menu</button>
+          <a href="#" class="hover:text-sky-500">Brand</a>
+        </div>
+        <div id="center">
+          <form action="#" class="flex">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="border focus:outline-none px-2 rounded-l lg:w-[32rem]"
+              placeholder="123"
+            />
+            <button
+              class="
+                border border-l-0
+                material-icons-round
+                p-1.5
+                bg-gray-200
+                text-gray-500
+                rounded-r
+                hover:bg-gray-300
+              "
+            >
+              search
+            </button>
+          </form>
+        </div>
+        <div class="hidden lg:block" id="right">
+          <ul class="flex gap-x-3 flex-col lg:flex-row">
+            <li class="hover:text-sky-500">Menu 1</li>
+            <li class="hover:text-sky-500">Menu 2</li>
+            <li
+              class="
+                hover:text-sky-500
+                flex
+                items-center
+                gap-x-2
+                border-l
+                pl-2.5
+              "
+            >
+              <a href="#">Syahrul</a>
+              <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <aside
+      class="
+        fixed
+        left-0
+        w-1/2
+        md:w-1/3
+        lg:hidden
+        top-[63px]
+        bg-white/80
+        backdrop-blur-sm
+        p-5
+        border-r
+        transform
+        -translate-x-full
+        transition-transform
+        ease-in-out
+        overflow-y-auto
+      "
+      style="height: calc(100% - 63px)"
+      id="sidebar"
+    >
+      <ul class="flex gap-y-3 flex-col lg:flex-row">
+        <li class="hover:text-sky-500 flex items-center gap-x-2">
+          <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div>
+          <a href="#">Syahrul</a>
+        </li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+      </ul>
+    </aside>
+    <main class="mt-[63px] max-w-[1440px] w-full mx-auto">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        iste inventore fugiat at tempora illum dolores velit sapiente mollitia
+        voluptatibus! Quod, cupiditate distinctio architecto aliquid eaque
+        impedit veniam beatae quis. Minus odit explicabo eum molestiae
+        veritatis. Soluta quos dicta, est quaerat odit eaque commodi voluptates
+        fugiat corporis cupiditate consequuntur debitis quisquam aliquam quasi
+        perferendis quas! Molestias molestiae reprehenderit ea maxime. Rem
+        nesciunt culpa nostrum, delectus officia ducimus minus quaerat quisquam
+        eaque, earum similique, iste eligendi laboriosam soluta? Repudiandae
+        quasi provident earum quam optio labore animi veritatis excepturi,
+        asperiores quod accusantium. Exercitationem labore quibusdam voluptatum
+        adipisci reprehenderit cum, tempore, recusandae at voluptate dignissimos
+        ea ducimus unde expedita eos dolor ad itaque facere reiciendis suscipit!
+        Necessitatibus sit eum itaque voluptatum facere voluptas. Aspernatur hic
+        saepe eveniet aliquam, architecto ipsa in voluptates odit totam,
+        doloremque commodi deleniti modi harum reiciendis eius expedita eos
+        officiis nam ipsam deserunt? Impedit praesentium labore aliquid suscipit
+        quos! Aperiam, possimus voluptatibus minima quasi similique veritatis
+        quidem distinctio incidunt error quis. Aliquam vitae omnis similique
+        veritatis, natus quam dolorum autem harum rem facilis quibusdam! Labore
+        possimus iusto ea quasi. Nisi, necessitatibus consequatur recusandae ab
+        temporibus dolorem obcaecati ipsum laborum iure beatae esse blanditiis
+        qui non voluptate, voluptatem quaerat commodi iste ullam molestiae in
+        odio error explicabo veritatis nemo? Harum! Fugit, autem deserunt.
+        Libero, quas suscipit cum hic nam laudantium. Beatae enim iusto quos ad
+        voluptatem quam modi molestias ipsum ipsa ratione labore, quidem
+        distinctio hic sequi quas, harum eaque. Nemo sapiente mollitia eos neque
+        excepturi voluptates dignissimos optio culpa suscipit consectetur?
+        Facilis nam dolores qui quidem, excepturi ducimus voluptatem non. Ut eum
+        id dolorem corporis eius assumenda dignissimos quam! Nisi tempora
+        quibusdam accusamus necessitatibus similique dolorem tempore, ab animi
+        ullam, cupiditate voluptas porro recusandae quasi placeat temporibus
+        nostrum totam sed deserunt nam velit eveniet adipisci dolore incidunt?
+        Rerum, earum?
+      </p>
+    </main>
+  </body>
+
+  <script>
+    // sidebar controller
+    const menu = document.getElementById("menu");
+    const sidebar = document.querySelector("aside#sidebar");
+
+    menu.addEventListener("click", () => {
+      if (sidebar.classList.contains("-translate-x-full")) {
+        sidebar.classList.remove("-translate-x-full");
+      } else {
+        sidebar.classList.add("-translate-x-full");
+      }
+    });
+  </script>
+</html>
