@@ -86,7 +86,12 @@
           <button class="material-icons-round lg:hidden" id="menu">menu</button>
           <a
             href="#"
-            class="text-sky-500 hover:text-sky-600 font-['Fredericka_the_Great'] text-[25px]"
+            class="
+              text-sky-500
+              hover:text-sky-600
+              font-['Fredericka_the_Great']
+              text-[25px]
+            "
             >RestEat</a
           >
         </div>
@@ -131,16 +136,36 @@
             <!-- </li> -->
             <li
               class="
-                hover:text-sky-500
                 flex
                 items-center
                 gap-x-2
                 border-l
                 pl-2.5
+                dropdown
+                relative
               "
             >
-              <a href="#">Syahrul</a>
-              <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div>
+              <a href="#" class="flex items-center gap-x-2 dropdown-trigger"
+                ><span class="hover:text-sky-500">Syahrul</span>
+                <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div
+              ></a>
+              <div
+                class="
+                  dropdown-items
+                  hidden
+                  absolute
+                  top-[2.5rem]
+                  right-0
+                  bg-white
+                  border
+                  rounded-lg
+                  py-2
+                  min-w-[7rem]
+                "
+              >
+                <a href="#profile" class="px-4 hover:text-sky-500">Profile</a>
+                <a href="#logout" class="px-4 hover:text-sky-500">Logout</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -300,7 +325,19 @@
       <div id="foods">
         <h2 class="font-['Fredericka_the_Great'] text-5xl">Food's</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 my-5">
-          <a href="#" class="group flex flex-col gap-y-2 border border-transparent hover:border-gray-200 transition-colors ease-in-out rounded-lg">
+          <a
+            href="#"
+            class="
+              group
+              flex flex-col
+              gap-y-2
+              border border-transparent
+              hover:border-gray-200
+              transition-colors
+              ease-in-out
+              rounded-lg
+            "
+          >
             <div
               class="
                 group-hover:scale-95
@@ -340,7 +377,9 @@
                 <span class="text-sm">5%</span>
               </div>
             </div>
-            <h3 class="group-hover:text-sky-500 transition-all ease-in-out px-2">
+            <h3
+              class="group-hover:text-sky-500 transition-all ease-in-out px-2"
+            >
               Lorem, ipsum dolor.
             </h3>
             <span class="font-bold px-2 pb-2">Rp200.000</span>
@@ -350,7 +389,19 @@
       <div id="drinks">
         <h2 class="font-['Fredericka_the_Great'] text-5xl">Drink's</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 my-5">
-          <a href="#" class="group flex flex-col gap-y-2 border border-transparent hover:border-gray-200 transition-colors ease-in-out rounded-lg">
+          <a
+            href="#"
+            class="
+              group
+              flex flex-col
+              gap-y-2
+              border border-transparent
+              hover:border-gray-200
+              transition-colors
+              ease-in-out
+              rounded-lg
+            "
+          >
             <div
               class="
                 group-hover:scale-95
@@ -390,7 +441,9 @@
                 <span class="text-sm">5%</span>
               </div>
             </div>
-            <h3 class="group-hover:text-sky-500 transition-all ease-in-out px-2">
+            <h3
+              class="group-hover:text-sky-500 transition-all ease-in-out px-2"
+            >
               Lorem, ipsum dolor.
             </h3>
             <span class="font-bold px-2 pb-2">Rp200.000</span>
@@ -400,7 +453,19 @@
       <div id="others">
         <h2 class="font-['Fredericka_the_Great'] text-5xl">Other's</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 my-5">
-          <a href="#" class="group flex flex-col gap-y-2 border border-transparent hover:border-gray-200 transition-colors ease-in-out rounded-lg">
+          <a
+            href="#"
+            class="
+              group
+              flex flex-col
+              gap-y-2
+              border border-transparent
+              hover:border-gray-200
+              transition-colors
+              ease-in-out
+              rounded-lg
+            "
+          >
             <div
               class="
                 group-hover:scale-95
@@ -440,7 +505,9 @@
                 <span class="text-sm">5%</span>
               </div>
             </div>
-            <h3 class="group-hover:text-sky-500 transition-all ease-in-out px-2">
+            <h3
+              class="group-hover:text-sky-500 transition-all ease-in-out px-2"
+            >
               Lorem, ipsum dolor.
             </h3>
             <span class="font-bold px-2 pb-2">Rp200.000</span>
@@ -449,7 +516,21 @@
       </div>
     </main>
     <footer class="border-t">
-      <div class="max-w-[1440px] w-full mx-auto p-5 flex gap-5 text-sm items-center justify-between flex-col-reverse lg:flex-row">
+      <div
+        class="
+          max-w-[1440px]
+          w-full
+          mx-auto
+          p-5
+          flex
+          gap-5
+          text-sm
+          items-center
+          justify-between
+          flex-col-reverse
+          lg:flex-row
+        "
+      >
         <div id="left">
           <a href="https://sysafarila.com" class="hover:text-sky-500"
             >&copy; SySafarila.com</a
@@ -478,6 +559,38 @@
         sidebar.classList.add("-translate-x-full");
       }
     });
+  </script>
+
+  <script>
+    // dropdown
+    const dropdowns = document.querySelectorAll(".dropdown");
+    document.addEventListener("click", (e) => {
+      // console.log("dropdown closed");
+      dropdowns.forEach((dropdown) => {
+        const items = dropdown.querySelector(".dropdown-items");
+        items.classList.add("hidden");
+      });
+    });
+    dropdowns.forEach((dropdown) => {
+      const trigger = dropdown.querySelector(".dropdown-trigger");
+      const items = dropdown.querySelector(".dropdown-items");
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (items.classList.contains("hidden")) {
+          items.classList.remove("hidden");
+        } else {
+          items.classList.add("hidden");
+        }
+      });
+      items.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <script>
+    // close dropdown anywhere
   </script>
 
   <!-- splide js -->
