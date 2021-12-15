@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Restaurant FE</title>
+
+    <!-- google fonts : start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- material icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    />
+
+    <!-- Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fredericka_the_Great -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Merienda -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts : end -->
+
+    <!-- Tailwind CSS : start -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Tailwind CSS : end -->
+
+    <!-- splide js : start -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/css/splide.min.css"
+    />
+    <style>
+      .splide__slide {
+        opacity: 0.3;
+      }
+
+      .splide__slide.is-active {
+        opacity: 1;
+      }
+
+      .splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
+        border-color: #0ea5e9;
+        border-width: 2px;
+      }
+    </style>
+    <!-- splide js : end -->
+  </head>
+  <body class="font-['Merienda'] text-gray-700">
+    <div
+      class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b px-5 z-10"
+    >
+      <nav
+        class="
+          flex
+          justify-between
+          max-w-[1440px]
+          mx-auto
+          items-center
+          my-3
+          relative
+        "
+      >
+        <div class="flex items-center gap-x-2" id="left">
+          <button class="material-icons-round lg:hidden" id="menu">menu</button>
+          <a
+            href="#"
+            class="
+              text-sky-500
+              hover:text-sky-600
+              font-['Fredericka_the_Great']
+              text-[25px]
+            "
+            >RestEat</a
+          >
+        </div>
+        <div id="center">
+          <form action="#" class="flex">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="
+                border
+                focus:outline-none
+                px-2
+                rounded-l
+                w-[12rem]
+                lg:w-[32rem]
+              "
+              placeholder="Fried rice / Lemon tea"
+            />
+            <button
+              class="
+                border border-l-0
+                material-icons-round
+                p-1.5
+                bg-gray-200
+                text-gray-500
+                rounded-r
+                hover:bg-gray-300
+              "
+            >
+              search
+            </button>
+          </form>
+        </div>
+        <div class="hidden lg:block" id="right">
+          <ul class="items-center flex gap-x-3 flex-col lg:flex-row">
+            <li class="hover:text-sky-500">Menu 1</li>
+            <!-- <li class="hover:text-sky-500"> -->
+            <a href="#" class="material-icons-round hover:text-sky-500"
+              >shopping_cart</a
+            >
+            <!-- </li> -->
+            <li
+              class="
+                flex
+                items-center
+                gap-x-2
+                border-l
+                pl-2.5
+                dropdown
+                relative
+              "
+            >
+              <a href="#" class="flex items-center gap-x-2 dropdown-trigger"
+                ><span class="hover:text-sky-500">Syahrul</span>
+                <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div
+              ></a>
+              <div
+                class="
+                  dropdown-items
+                  hidden
+                  absolute
+                  top-[2.5rem]
+                  right-0
+                  bg-white
+                  border
+                  rounded-lg
+                  py-2
+                  min-w-[7rem]
+                "
+              >
+                <a href="#profile" class="px-4 hover:text-sky-500">Profile</a>
+                <a href="#logout" class="px-4 hover:text-sky-500">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <aside
+      class="
+        fixed
+        left-0
+        w-1/2
+        md:w-1/3
+        lg:hidden
+        top-[63px]
+        bg-white/80
+        backdrop-blur-sm
+        p-5
+        border-r
+        transform
+        -translate-x-full
+        transition-transform
+        ease-in-out
+        overflow-y-auto
+        z-10
+      "
+      style="height: calc(100% - 63px)"
+      id="sidebar"
+    >
+      <ul class="flex gap-y-3 flex-col lg:flex-row">
+        <li class="hover:text-sky-500 flex items-center gap-x-2">
+          <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div>
+          <a href="#">Syahrul</a>
+        </li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+        <li class="hover:text-sky-500">Menu 1</li>
+        <li class="hover:text-sky-500">Menu 2</li>
+      </ul>
+    </aside>
+    <main class="mt-[63px] max-w-[1440px] w-full mx-auto p-5">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+        <div id="images" class="flex flex-col gap-3">
+          <div class="splide" id="main-slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/200x200?sig=1"
+                    class="w-full rounded-lg"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/200x200?sig=2"
+                    class="w-full rounded-lg"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/200x200?sig=3"
+                    class="w-full rounded-lg"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/200x200?sig=4"
+                    class="w-full rounded-lg"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="thumbnail-slider" class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="https://source.unsplash.com/random/200x200?sig=1" />
+                </li>
+                <li class="splide__slide">
+                  <img src="https://source.unsplash.com/random/200x200?sig=2" />
+                </li>
+                <li class="splide__slide">
+                  <img src="https://source.unsplash.com/random/200x200?sig=3" />
+                </li>
+                <li class="splide__slide">
+                  <img src="https://source.unsplash.com/random/200x200?sig=4" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2">
+          <div class="border-b pb-3">
+            <h1 class="font-bold text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, accusantium.
+            </h1>
+            <span class="text-sky-500 text-2xl">Rp20.000</span>
+          </div>
+          <div class="flex flex-col gap-3 pt-3">
+            <h2 class="font-['Fredericka_the_Great'] text-5xl">Detail</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloremque magnam reprehenderit, facilis, voluptates quas, nostrum
+              ipsa quos quasi est fugiat cumque. Fuga corrupti omnis
+              necessitatibus laudantium veritatis ex labore id?
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloremque magnam reprehenderit, facilis, voluptates quas, nostrum
+              ipsa quos quasi est fugiat cumque. Fuga corrupti omnis
+              necessitatibus laudantium veritatis ex labore id?
+            </p>
+          </div>
+        </div>
+        <div class="border rounded-lg p-3">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+            odio debitis at repellendus porro libero veritatis sed. Dolorum vel
+            modi quod excepturi dicta perspiciatis et culpa! Vitae natus
+            deleniti itaque!
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer class="border-t">
+      <div
+        class="
+          max-w-[1440px]
+          w-full
+          mx-auto
+          p-5
+          flex
+          gap-5
+          text-sm
+          items-center
+          justify-between
+          flex-col-reverse
+          lg:flex-row
+        "
+      >
+        <div id="left">
+          <a href="https://sysafarila.com" class="hover:text-sky-500"
+            >&copy; SySafarila.com</a
+          >
+        </div>
+        <div class="flex items-center gap-x-5" id="right">
+          <a href="#" class="hover:text-sky-500">Menu 1</a>
+          <a href="#" class="hover:text-sky-500">Menu 2</a>
+          <a href="#" class="hover:text-sky-500">Menu 3</a>
+          <a href="#" class="hover:text-sky-500">Menu 4</a>
+          <a href="#" class="hover:text-sky-500">Menu 5</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    // sidebar controller
+    const menu = document.getElementById("menu");
+    const sidebar = document.querySelector("aside#sidebar");
+
+    menu.addEventListener("click", () => {
+      if (sidebar.classList.contains("-translate-x-full")) {
+        sidebar.classList.remove("-translate-x-full");
+      } else {
+        sidebar.classList.add("-translate-x-full");
+      }
+    });
+  </script>
+
+  <script>
+    // Root script
+    document.addEventListener("click", (e) => {
+      const dropdowns = document.querySelectorAll(".dropdown");
+      // console.log("dropdown closed");
+      dropdowns.forEach((dropdown) => {
+        const items = dropdown.querySelector(".dropdown-items");
+        items.classList.add("hidden");
+      });
+    });
+  </script>
+
+  <script>
+    // dropdown
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      const trigger = dropdown.querySelector(".dropdown-trigger");
+      const items = dropdown.querySelector(".dropdown-items");
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (items.classList.contains("hidden")) {
+          items.classList.remove("hidden");
+        } else {
+          items.classList.add("hidden");
+        }
+      });
+      items.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <script>
+    // close dropdown anywhere
+  </script>
+
+  <!-- splide js -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var main = new Splide("#main-slider", {
+        type: "fade",
+        rewind: true,
+        pagination: false,
+        arrows: false,
+      });
+
+      var thumbnails = new Splide("#thumbnail-slider", {
+        fixedWidth: 100,
+        fixedHeight: 100,
+        gap: 10,
+        rewind: true,
+        pagination: false,
+        cover: false,
+        isNavigation: true,
+        arrows: false,
+      });
+
+      main.sync(thumbnails);
+      main.mount();
+      thumbnails.mount();
+    });
+  </script>
+</html>
