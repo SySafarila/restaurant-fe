@@ -194,9 +194,32 @@
       id="sidebar"
     >
       <ul class="flex gap-y-3 flex-col lg:flex-row">
-        <li class="hover:text-sky-500 flex items-center gap-x-2">
-          <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div>
-          <a href="#">Syahrul</a>
+        <li
+          class="flex items-center gap-x-2 dropdown relative"
+        >
+          <a
+            href="#"
+            class="flex flex-row-reverse items-center gap-x-2 dropdown-trigger"
+            ><span class="hover:text-sky-500">Syahrul</span>
+            <div class="w-[24px] h-[24px] bg-gray-200 rounded-full"></div
+          ></a>
+          <div
+            class="
+              dropdown-items
+              hidden
+              absolute
+              top-[2.5rem]
+              right-0
+              bg-white
+              border
+              rounded-lg
+              py-2
+              min-w-[7rem]
+            "
+          >
+            <a href="#profile" class="px-4 hover:text-sky-500">Profile</a>
+            <a href="#logout" class="px-4 hover:text-sky-500">Logout</a>
+          </div>
         </li>
         <li class="hover:text-sky-500">Menu 1</li>
         <li class="hover:text-sky-500">Menu 2</li>
@@ -333,10 +356,12 @@
                   relative
                   overflow-hidden
                 "
-              ><img
-              src="https://source.unsplash.com/random/1300x320?sig=2"
-              class="w-full h-full object-center object-cover"
-            /></div>
+              >
+                <img
+                  src="https://source.unsplash.com/random/1300x320?sig=2"
+                  class="w-full h-full object-center object-cover"
+                />
+              </div>
             </li>
             <li class="splide__slide">
               <div
@@ -349,10 +374,12 @@
                   relative
                   overflow-hidden
                 "
-              ><img
-              src="https://source.unsplash.com/random/1300x320?sig=3"
-              class="w-full h-full object-center object-cover"
-            /></div>
+              >
+                <img
+                  src="https://source.unsplash.com/random/1300x320?sig=3"
+                  class="w-full h-full object-center object-cover"
+                />
+              </div>
             </li>
           </ul>
         </div>
