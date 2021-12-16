@@ -465,13 +465,21 @@
           <form action="#" class="flex flex-col gap-y-5">
             <div class="flex flex-col gap-2">
               <label for="quantity">Quantity</label>
-              <input
-                type="number"
-                name=""
-                id="quantity"
-                class="border w-full rounded focus:outline-none p-2"
-                placeholder="Example : 1"
-              />
+              <div class="flex">
+                <input
+                  type="number"
+                  name=""
+                  id="quantity"
+                  class="border w-full rounded-l focus:outline-none p-2"
+                  placeholder="Example : 1"
+                  min="1"
+                  value="1"
+                />
+                <button class="w-[4rem] bg-red-500 hover:bg-red-600 text-white" id="-">-</button>
+                <button class="w-[4rem] bg-sky-500 hover:bg-sky-600 text-white rounded-r" id="+">
+                  +
+                </button>
+              </div>
             </div>
             <div class="flex flex-col gap-2">
               <label for="note">Note</label>
