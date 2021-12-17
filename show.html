@@ -79,6 +79,22 @@
       }
     </style>
     <!-- custom style : end -->
+
+    <!-- local style : start -->
+    <style>
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+    <!-- local style : end -->
   </head>
   <body class="font-['Merienda'] text-gray-700 tap-highlight-transparent">
     <div
@@ -470,7 +486,14 @@
                   type="number"
                   name=""
                   id="quantity"
-                  class="border w-full rounded-l focus:outline-none p-2"
+                  class="
+                    border
+                    w-full
+                    rounded-l
+                    focus:outline-none
+                    p-2
+                    text-center
+                  "
                   placeholder="Example : 1"
                   min="1"
                   value="1"
@@ -698,6 +721,11 @@
       e.preventDefault();
       if (qty.value >= 1) {
         qty.value = parseInt(qty.value) + 1;
+      }
+    });
+    qty.addEventListener("keyup", () => {
+      if (qty.value == 0) {
+        qty.value = 1;
       }
     });
   </script>
