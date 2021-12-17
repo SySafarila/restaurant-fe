@@ -475,8 +475,22 @@
                   min="1"
                   value="1"
                 />
-                <button class="w-[4rem] bg-red-500 hover:bg-red-600 text-white" id="-">-</button>
-                <button class="w-[4rem] bg-sky-500 hover:bg-sky-600 text-white rounded-r" id="+">
+                <button
+                  class="w-[4rem] bg-red-500 hover:bg-red-600 text-white"
+                  id="-qty"
+                >
+                  -
+                </button>
+                <button
+                  class="
+                    w-[4rem]
+                    bg-sky-500
+                    hover:bg-sky-600
+                    text-white
+                    rounded-r
+                  "
+                  id="+qty"
+                >
                   +
                 </button>
               </div>
@@ -665,6 +679,26 @@
       main.sync(thumbnails);
       main.mount();
       thumbnails.mount();
+    });
+  </script>
+
+  <script>
+    // qty controller
+    const qty = document.getElementById("quantity");
+    const min = document.getElementById("-qty");
+    const plus = document.getElementById("+qty");
+
+    min.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (qty.value > 1) {
+        qty.value = qty.value - 1;
+      }
+    });
+    plus.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (qty.value >= 1) {
+        qty.value = parseInt(qty.value) + 1;
+      }
     });
   </script>
 </html>
