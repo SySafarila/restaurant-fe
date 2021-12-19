@@ -72,7 +72,7 @@
       class="
         bg-gray-100
         fixed
-        w-[15rem]
+        w-1/2
         transform
         -translate-x-full
         lg:translate-x-0
@@ -176,7 +176,25 @@
         <a href="#" class="px-4 py-2 hover:bg-green-100">Menu</a>
       </div>
     </aside>
-    <main class="lg:pl-[15rem] pt-[56px] lg:pt-0">
+    <main
+      class="
+        lg:pl-[15rem]
+        pt-[56px]
+        lg:pt-0
+        after:content-['']
+        after:fixed
+        after:top-0
+        after:left-0
+        after:w-full
+        after:h-full
+        after:bg-black/50
+        after:transform
+        after:translate-x-full
+        after:transition
+        after:ease-in-out
+      "
+      id="content"
+    >
       <div class="p-5">
         <label for="">Label</label>
         <input
@@ -224,26 +242,45 @@
     </main>
   </body>
   <script>
-    const sidebar = document.querySelector("aside#sidebar");
+    function rootController() {
+      const sidebar = document.querySelector("aside#sidebar");
+      const content = document.querySelector("main#content");
 
-    document.addEventListener("click", () => {
-      if (!sidebar.classList.contains("-translate-x-full")) {
-        sidebar.classList.add("-translate-x-full");
-      }
-    });
+      document.addEventListener("click", () => {
+        if (!sidebar.classList.contains("-translate-x-full")) {
+          sidebar.classList.add("-translate-x-full");
+        }
+        if (content.classList.contains("after:translate-x-1/2")) {
+          content.classList.replace(
+            "after:translate-x-1/2",
+            "after:translate-x-full"
+          );
+        }
+      });
+    }
+    rootController();
   </script>
   <script>
     function sidebarController() {
       const menu = document.querySelector("nav button#menu");
       const menuSidebar = document.querySelector("aside button#menuSidebar");
       const sidebar = document.querySelector("aside#sidebar");
+      const content = document.querySelector("main#content");
 
       menu.addEventListener("click", (e) => {
         e.stopPropagation();
         sidebar.classList.toggle("-translate-x-full");
+        content.classList.replace(
+          "after:translate-x-full",
+          "after:translate-x-1/2"
+        );
       });
       menuSidebar.addEventListener("click", (e) => {
         e.stopPropagation();
+        content.classList.replace(
+          "after:translate-x-1/2",
+          "after:translate-x-full"
+        );
         sidebar.classList.toggle("-translate-x-full");
       });
       sidebar.addEventListener("click", (e) => e.stopPropagation());
