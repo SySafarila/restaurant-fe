@@ -61,9 +61,10 @@
     <!-- custom style : end -->
   </head>
   <body class="text-gray-700 tap-highlight-transparent">
-    <aside class="bg-gray-100 fixed w-[15rem]">
-      <div class="p-4">
-          <a href="#">Brand</a>
+    <aside class="bg-gray-100 fixed w-[15rem] transform -translate-x-full lg:translate-x-0 transition ease-in-out">
+      <div class="p-4 flex">
+          <a href="#" class="grow">Brand</a>
+          <a href="#" class="material-icons-round">chevron_left</a>
       </div>
       <div class="flex flex-col gap-y-3 overflow-y-auto" style="height: calc(100vh - 56px);">
           <!-- <div class="px-4 py-2"> -->
@@ -191,7 +192,7 @@
           <!-- </div> -->
       </div>
     </aside>
-    <main class="pl-[15rem]">
+    <main class="lg:pl-[15rem]">
       <div class="p-5">
         <label for="">Label</label>
         <input
