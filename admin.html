@@ -61,7 +61,10 @@
     <!-- custom style : end -->
   </head>
   <body class="text-gray-700 tap-highlight-transparent">
-    <nav class="flex items-center p-4 lg:hidden" id="navbar">
+    <nav
+      class="flex items-center p-4 lg:hidden fixed w-full bg-white"
+      id="navbar"
+    >
       <button class="material-icons-round" id="menu">menu</button>
       <a href="#" class="grow text-center font-bold">Brand</a>
     </nav>
@@ -173,7 +176,7 @@
         <a href="#" class="px-4 py-2 hover:bg-green-100">Menu</a>
       </div>
     </aside>
-    <main class="lg:pl-[15rem]">
+    <main class="lg:pl-[15rem] pt-[56px] lg:pt-0">
       <div class="p-5">
         <label for="">Label</label>
         <input
@@ -221,15 +224,30 @@
     </main>
   </body>
   <script>
-    const menu = document.querySelector("nav button#menu");
-    const menuSidebar = document.querySelector("aside button#menuSidebar");
     const sidebar = document.querySelector("aside#sidebar");
 
-    menu.addEventListener("click", () => {
-      sidebar.classList.toggle("-translate-x-full");
+    document.addEventListener("click", () => {
+      if (!sidebar.classList.contains("-translate-x-full")) {
+        sidebar.classList.add("-translate-x-full");
+      }
     });
-    menuSidebar.addEventListener("click", () => {
-      sidebar.classList.toggle("-translate-x-full");
-    });
+  </script>
+  <script>
+    function sidebarController() {
+      const menu = document.querySelector("nav button#menu");
+      const menuSidebar = document.querySelector("aside button#menuSidebar");
+      const sidebar = document.querySelector("aside#sidebar");
+
+      menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle("-translate-x-full");
+      });
+      menuSidebar.addEventListener("click", (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle("-translate-x-full");
+      });
+      sidebar.addEventListener("click", (e) => e.stopPropagation());
+    }
+    sidebarController();
   </script>
 </html>
