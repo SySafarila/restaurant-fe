@@ -70,7 +70,8 @@
     </nav>
     <aside
       class="
-        bg-gray-100
+        bg-gray-50
+        border-r
         fixed
         w-1/2
         lg:w-[15rem]
@@ -197,6 +198,9 @@
       "
       id="content"
     >
+    <div class="p-5">
+      <h2 class="text-2xl font-semibold">Title</h2>
+    </div>
       <div class="p-5 flex flex-col gap-5">
         <label for="">Label</label>
         <input
@@ -212,36 +216,50 @@
           "
           placeholder="Placeholder"
         />
-        <input type="file" name="" id="" class="w-full file:border-none file:p-2 file:rounded file:bg-sky-100 file:text-sky-700 hover:file:bg-sky-200 file:mr-3">
+        <input
+          type="file"
+          name=""
+          id=""
+          class="
+            w-full
+            file:border-none
+            file:p-2
+            file:rounded
+            file:bg-sky-100
+            file:text-sky-700
+            hover:file:bg-sky-200
+            file:mr-3
+          "
+        />
         <div>
           <button
-          class="
-            bg-sky-500
-            hover:bg-sky-600
-            transition
-            ease-in-out
-            text-white
-            py-2
-            px-3
-            rounded
-          "
-        >
-          Button
-        </button>
-        <button
-          class="
-            bg-rose-500
-            hover:bg-rose-600
-            transition
-            ease-in-out
-            text-white
-            py-2
-            px-3
-            rounded
-          "
-        >
-          Button
-        </button>
+            class="
+              bg-sky-500
+              hover:bg-sky-600
+              transition
+              ease-in-out
+              text-white
+              py-2
+              px-3
+              rounded
+            "
+          >
+            Button
+          </button>
+          <button
+            class="
+              bg-rose-500
+              hover:bg-rose-600
+              transition
+              ease-in-out
+              text-white
+              py-2
+              px-3
+              rounded
+            "
+          >
+            Button
+          </button>
         </div>
       </div>
     </main>
